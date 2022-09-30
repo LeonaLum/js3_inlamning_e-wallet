@@ -1,0 +1,191 @@
+
+.App{
+  h1, h2, button{
+    font-family: 'Poppins', sans-serif;
+  }
+  h1{
+    color: rgb(87, 87, 87);
+    font-weight: 300;
+    margin-bottom: 10px;
+  }
+  h2{
+    color: rgb(87, 87, 87);
+    font-weight: 200;
+    border-bottom: 1px solid rgb(181, 181, 181);
+  }
+ main{
+  @include flexBox(column, center, space-between);
+  height: 100vh;
+  width: 100%;
+    .button-container{
+      @include flexBox(column, center, center);
+      height: 100%;
+      width: 100%;
+    }
+    .preview{
+      @include flexBox(column, center, center);
+      @include poppins;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      width: 100%;
+      h3{
+        color: rgb(87, 87, 87);
+        font-weight: 200;
+        margin-bottom: 10px;
+      }
+    }
+    .card-form{
+      @include poppins;
+      width: 100%;
+      height: 100%;
+      .validation{
+        color: red;
+        min-height: 25px;
+      }
+      .form-field{
+        @include flexBox(column, flex-start, center);
+        padding: 10px;
+      }
+      .form-field-row{
+        @include flexBox(row, flex-start, space-between);
+        padding: 10px;
+        .field-row{
+          @include flexBox(column, flex-start, space-between); 
+        }
+      }
+    }
+    .active-card{
+      @include flexBox(column, center, center); 
+      @include poppins;
+      margin-bottom: 50px;
+      padding: 10px;
+      border: 2px solid red;
+      width: 100%;
+      p{
+        margin-bottom: 10px;
+      }
+    
+    }
+    .card-list{
+      @include flexBox(column, center, center); 
+      width: 100%;
+      padding: 10px;
+    }
+    .button-addcard{
+      @include poppins;
+      background-color: rgba(128, 128, 128, 0);
+      width: 90%;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      padding: 10px;
+      color: rgb(87, 87, 87);
+      border: 1px solid rgb(125, 125, 125);
+      border-radius: 10px;
+      font-size: 17px;
+      font-weight: 400;
+      &:hover{
+        cursor: pointer;
+        color: rgb(50, 50, 50);
+      }
+    }
+    .card{
+      font-family: 'Inconsolata', monospace;
+      font-weight: 400;
+      margin-bottom: 10px;
+      padding: 10px;
+      border-radius: 20px;
+      width: 300px;
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+      .card-head{
+        @include flexBox(row, center, space-between);
+        border-radius: 10px 10px 0px 0px;
+        width: 100%;
+      .scan{
+        height: 40px;
+        width: 60px;
+        margin-left: 20px;
+        border-radius: 7px;
+        background-image: url("./img/chip.png");
+        background-size: cover;
+        background-position: center;
+      }
+      }
+      .card-main{
+        width: 100%;
+        min-height: 31px;
+        font-size: 20px;
+      } 
+      .card-footer{
+        @include flexBox(row, flex-start, flex-start);
+        border-radius: 0px 0px 10px 10px;
+        font-size: 10px;
+        width: 100%;
+       .footer-left{
+          @include flexBox(column, flex-start, flex-start);
+          width: 70%;
+          padding: 10px;
+          span{
+            font-size: 15px
+          }
+        }
+        .footer-right{
+          @include flexBox(column, flex-start, flex-start);
+          width: 30%;
+          padding: 10px;
+          span{
+            font-size: 15px
+          }
+        }
+      }
+    }
+
+    .remove-button{
+      color: rgb(87, 87, 87);
+      background-color: rgba(206, 203, 203, 0);
+      margin-bottom: 20px;
+       &:hover{
+        cursor: pointer;
+        color: red;
+       }
+    }
+
+    .visa{
+      background-color: rgb(223, 184, 255);
+      .vendorPic{
+        height: 70px;
+        width: 70px;
+        background-image: url("./img/visa.png");
+        background-size: cover;
+      }
+    }
+    .mastercard{
+      background-color: rgb(255, 128, 59);
+      .vendorPic{
+        height: 70px;
+        width: 70px;
+        background-image: url("./img/mastercard.png");
+        background-size: cover;       
+      }
+    }
+    .american-express{
+      background-color: rgb(53, 117, 255);
+      .vendorPic{
+        height: 70px;
+        width: 70px;
+        background-image: url("./img/amex.png");
+        background-size: cover;    
+      }
+    }
+    input, select{
+      border: 1px solid rgb(148, 148, 148);
+      color: rgb(87, 87, 87);
+      width: 100%;
+      padding: 8px;
+      text-align: left;
+      border-radius: 5px;
+    }
+    label{
+      color: rgb(56, 56, 56);
+    }
+  }
+}

@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import "./styles.css"
+import { Routes, Route, NavLink } from "react-router-dom";
+import CardList from "./pages/CardList";
+import AddCard from "./pages/AddCard";
+import Home from "../src/pages/Home";
+import { getUser } from "./Redux/userSlice";
+import { useDispatch, useSelector } from "react-redux"
+import { useEffect } from "react";
 
 function App() {
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getUser());
+  }, []);
+
   return (
+    <>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     
+      <NavLink to="/"><h1>E-WALLET</h1></NavLink>
+      <main>
+       <Routes>
+         <Route path="/" element={<Home />}/>
+         <Route path="/cards" element={<CardList />}/>
+         <Route path="/addcard" element={<AddCard/>}/>
+       </Routes>
+      </main>
+      
     </div>
+     
+    </>
   );
+ 
 }
 
 export default App;

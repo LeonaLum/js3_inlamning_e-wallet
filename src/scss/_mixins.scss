@@ -1,0 +1,9 @@
+@mixin flexBox($direction, $align, $content) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $align;
+  justify-content: $content;
+}
+@mixin poppins{
+  font-family: 'Poppins', sans-serif;
+}
