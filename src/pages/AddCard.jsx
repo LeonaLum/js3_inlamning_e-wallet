@@ -110,6 +110,7 @@ const AddCard = () => {
             <label htmlFor="ccv">CCV</label>
             <input type="text" 
                    id="ccv"
+                   onChange={handleClick}
                    placeholder="123"
                    maxLength={3}/>                  
           </section>
